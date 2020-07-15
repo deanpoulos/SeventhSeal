@@ -7,5 +7,6 @@ At this point I wish to explore various trading strategies which employ some
 form of machine learning to successfully predict price action of cryptocurrency
 assets.
 ## Todo
- - [ ] Interface with Binance API
- - [ ] Plot historical price data of Bitcoin
+ - [x] Interface with Binance API
+ - [x] Plot historical price data of Bitcoin
+ - [ ] Write simple convolutional network
