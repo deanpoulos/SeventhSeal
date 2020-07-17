@@ -1,4 +1,4 @@
-# SeventhSeal
+# Seventh Seal
 ## Dedication
 I dedicate this project to my friend Lyndon who has helped inspire entreprenuership.
 ## Introduction
