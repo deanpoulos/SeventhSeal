@@ -3,7 +3,7 @@ import pandas as pd
 import math
 import os.path
 import time
-from keys import *
+from mykeys import *
 from bitmex import bitmex
 from binance.client import Client
 from datetime import timedelta, datetime

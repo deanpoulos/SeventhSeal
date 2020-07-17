@@ -4,7 +4,7 @@ At this point I wish to explore various trading strategies which util
 form of machine learning to successfully predict price action of cryptocurrency
 assets.
 ## Guide
- - Insert your Binance API/Secret key to keys.py (this will be ignored by git add)
+ - Insert your Binance API/Secret key to a file `mykeys.py` using the `mykeys_template.py` as a guide.
  - Download new .csv data using:
  `python3 -i API-Interface.py`, then, `get_all_binance("BTCUSDT", "1m", save=True)`
  - Plot 1d BTCUSDT price data by running `python3 Plotter.py`
