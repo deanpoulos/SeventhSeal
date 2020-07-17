@@ -12,6 +12,6 @@ assets.
 ## Todo
  - [x] Interface with Binance API
  - [x] Plot historical price data of Bitcoin
- - [ ] Split 1d dataset into training and test data
- - [ ] Write DNN skeleton with data loaders
- - [ ] Write 1 layer neural network
+ - [x] 1d dataset into training and test data
+ - [x] DNN skeleton with data loaders
+ - [x] 1 layer neural network
