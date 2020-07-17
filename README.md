@@ -1,6 +1,6 @@
 # Seventh Seal
 ## Dedication
-I dedicate this project to my friend @lundnq who has helped inspire entreprenuership.
+I dedicate this project to my friend Lyndon who has helped inspire entreprenuership.
 ## Introduction
 At this point I wish to explore various trading strategies which utilise some
 form of machine learning to successfully predict price action of cryptocurrency
