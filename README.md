@@ -10,8 +10,8 @@ assets.
  - Download new .csv data using `python3 -i API-Interface.py` then `get_all_binance("BTCUSDT", "1m", save=True")`
  - Plot 1d BTCUSDT price data by running `python3 Plotter.py`
 ## Todo
- - [ ]  Interface with Binance API
- - [ ]  Plot historical price data of Bitcoin
+ - [x]  Interface with Binance API
+ - [x]  Plot historical price data of Bitcoin
  - [ ]  1d dataset into training and test data
  - [ ]  DNN skeleton with data loaders
  - [ ]  1 layer neural network
