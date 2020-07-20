@@ -10,17 +10,15 @@ from datetime import timedelta, datetime
 from dateutil import parser
 from tqdm import tqdm_notebook #(Optional, used for progress-bars)
 
+### CONSTANTS
+binsizes = {"1m": 1, "5m": 5, "1h": 60, "1d": 1440}
+batch_size = 750
+bitmex_client = bitmex(test=False, api_key=bitmex_api_key, api_secret=bitmex_api_secret)
+binance_client = Client(api_key=binance_api_key, api_secret=binance_api_secret)
+
 class DataLoader:
-    ### CONSTANTS
-    binsizes = {"1m": 1, "5m": 5, "1h": 60, "1d": 1440}
-    batch_size = 750
-    bitmex_client = bitmex(test=False, api_key=bitmex_api_key, api_secret=bitmex_api_secret)
-    binance_client = Client(api_key=binance_api_key, api_secret=binance_api_secret)
 
-    def __init__(self):
-        super.__init__()
-
-    def minutes_of_new_data(symbol, kline_size, data, source):
+    def minutes_of_new_data(self, symbol, kline_size, data, source):
         if len(data) > 0:  old = parser.parse(data["timestamp"].iloc[-1])
         elif source == "binance": old = datetime.strptime('1 Jan 2017', '%d %b %Y')
         elif source == "bitmex": old = bitmex_client.Trade.Trade_getBucketed(symbol=symbol, binSize=kline_size, count=1, reverse=False).result()[0][0]['timestamp']
@@ -28,11 +26,11 @@ class DataLoader:
         if source == "bitmex": new = bitmex_client.Trade.Trade_getBucketed(symbol=symbol, binSize=kline_size, count=1, reverse=True).result()[0][0]['timestamp']
         return old, new
 
-    def get_all_binance(symbol, kline_size, save = False):
+    def get_all_binance(self, symbol, kline_size, save):
         filename = '%s-%s-data.csv' % (symbol, kline_size)
         if os.path.isfile(filename): data_df = pd.read_csv(filename)
         else: data_df = pd.DataFrame()
-        oldest_point, newest_point = minutes_of_new_data(symbol, kline_size, data_df, source = "binance")
+        oldest_point, newest_point = self.minutes_of_new_data(symbol, kline_size, data_df, "binance")
         delta_min = (newest_point - oldest_point).total_seconds()/60
         available_data = math.ceil(delta_min/binsizes[kline_size])
         if oldest_point == datetime.strptime('1 Jan 2017', '%d %b %Y'): print('Downloading all available %s data for %s. Be patient..!' % (kline_size, symbol))
@@ -49,7 +47,7 @@ class DataLoader:
         print('All caught up..!')
         return data_df
 
-    def get_all_bitmex(symbol, kline_size, save = False):
+    def get_all_bitmex(symbol, kline_size, save):
         filename = '%s-%s-data.csv' % (symbol, kline_size)
         if os.path.isfile(filename): data_df = pd.read_csv(filename)
         else: data_df = pd.DataFrame()
@@ -69,3 +67,7 @@ class DataLoader:
         if save and rounds > 0: data_df.to_csv(filename)
         print('All caught up..!')
         return data_df
+
+def load_data(time):
+    dl = DataLoader()
+    dl.get_all_binance("BTCUSDT", time, save=True)
