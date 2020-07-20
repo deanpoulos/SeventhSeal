@@ -5,9 +5,9 @@ form of machine learning to successfully predict price action of crypt
 assets.
 ## Guide
  - Insert your Binance API/Secret key to a file `mykeys.py` using the `mykeys_template.py` as a guide.
- - Download new .csv data using:
- `python3 -i API-Interface.py`, then, `get_all_binance("BTCUSDT", "1m", save=True)`
- - Plot 1d BTCUSDT price data by running `python3 Plotter.py`
+ - Interface with all data using `python3 -i DataInferface.py`
+ - Within the interfae module, plot data using `plot()` and update .csv using `load_data(1d)`
+
 ## Todo
  - [x]  Interface with Binance API
  - [x]  Plot historical price data of Bitcoin
