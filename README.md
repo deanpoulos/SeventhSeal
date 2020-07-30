@@ -11,9 +11,11 @@ assets.
 ## Todo
  - [x]  Interface with Binance API
  - [x]  Plot historical price data of Bitcoin
- - [ ]  Split 1d dataset into training and test data
- - [ ]  DNN skeleton with data loaders
- - [ ]  1 layer neural network
+ - [x]  Split 1d dataset into training and test data
+ - [x]  NN skeleton with data loaders
+ - [x]  LSTM neural network
+ - [ ]  Trend-predicting LSTM 
+ - [ ]  DA-RNN Network
 
 ## Ideas
  - Make a success predictor for leveraged cryptocurrency contracts which can identify patterns which precede volatility and price growth. Suppose there is a market reaction to a certain piece of news which causes price growth and low volatility. A successful neural network should be able to identify this news and take advantage of a small-margin leveraged contract.
