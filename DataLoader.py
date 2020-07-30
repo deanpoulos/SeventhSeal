@@ -27,7 +27,7 @@ class DataLoader:
         return old, new
 
     def get_all_binance(self, symbol, kline_size, save):
-        filename = '%s-%s-data.csv' % (symbol, kline_size)
+        filename = 'data/%s-%s-data.csv' % (symbol, kline_size)
         if os.path.isfile(filename): data_df = pd.read_csv(filename)
         else: data_df = pd.DataFrame()
         oldest_point, newest_point = self.minutes_of_new_data(symbol, kline_size, data_df, "binance")
