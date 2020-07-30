@@ -14,3 +14,7 @@ assets.
  - [ ]  Split 1d dataset into training and test data
  - [ ]  DNN skeleton with data loaders
  - [ ]  1 layer neural network
+
+## Ideas
+ - Make a success predictor for leveraged cryptocurrency contracts which can identify patterns which precede volatility and price growth. Suppose there is a market reaction to a certain piece of news which causes price growth and low volatility. A successful neural network should be able to identify this news and take advantage of a small-margin leveraged contract.
+ - Make a price action predictor for long-term intraday trading which can identify patterns which precede price growth or decline.
