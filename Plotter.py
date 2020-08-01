@@ -8,7 +8,7 @@ from matplotlib import pyplot as plt
 
 class Plotter:
     def __init__(self, time):
-        self.data = pd.read_csv('BTCUSDT-' + time + '-data.csv', index_col=0, parse_dates=True)
+        self.data = pd.read_csv('data/BTCUSDT-' + time + '-data.csv', index_col=0, parse_dates=True)
         self.data.shape
 
     def plot_mpl_candlesticks(self):
