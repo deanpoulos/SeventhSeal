@@ -4,6 +4,9 @@ At this point I wish to explore various trading strategies which util
 form of machine learning to successfully predict price action of cryptocurrency
 assets.
 ## Guide
+ - Create a virtual environment using `virtualenv venv`.
+ - Activate the environment using `source ./venv/bin/activate`.
+ - Install requirements using `pip3 install -r requirements.txt`.
  - Insert your Binance API/Secret key to a file `mykeys.py` using the `mykeys_template.py` as a guide.
  - Interface with all data using `python3 -i DataInferface.py`
  - Within the interfae module, plot data using `plot()` and update .csv using `load_data(1d)`
